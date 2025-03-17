@@ -30,17 +30,6 @@
                 object-fit: cover;
             }
         </style>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const hearts = ["💛", "❤️", "💚", "💙", "💜"];
-                let index = 0;
-
-                setInterval(() => {
-                    document.title = `nyainfo ${hearts[index]} \u0B9E Coming Soon`;
-                    index = (index + 1) % hearts.length;
-                }, 1000); // Change title every second
-            });
-        </script>
     </head>
 
     <body class="flex items-center justify-center bg-gray-500 comfortaa">
