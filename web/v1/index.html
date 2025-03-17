@@ -4,7 +4,7 @@
         <link rel="shortcut icon" href="favicon.ico" />
         <link rel="icon" type="image/png" href="favicon.png" />
 
-        <title>ηуαιηƒσ Coming Soon</title>
+        <title>nyainfo &#2974; Coming Soon</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +31,15 @@
             }
         </style>
         <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const hearts = ["💛", "❤️", "💚", "💙", "💜"];
+                let index = 0;
+
+                setInterval(() => {
+                    document.title = `nyainfo ${hearts[index]} \u0B9E Coming Soon`;
+                    index = (index + 1) % hearts.length;
+                }, 1000); // Change title every second
+            });
         </script>
     </head>
 
