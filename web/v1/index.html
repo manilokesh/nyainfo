@@ -29,13 +29,25 @@
                 height: 100%;
                 object-fit: cover;
             }
+
+            .glasspanel {
+                /* From https://css.glass */
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                padding: 5em;
+
+            }
         </style>
     </head>
 
     <body class="flex items-center justify-center bg-gray-500 comfortaa">
         <img class="background" src="wave_gray_01.svg" alt="Background Waves">
 
-        <div class="relative text-center text-white z-10">
+        <div class=" relative text-center text-white z-10">
             <p class="text-5xl mt-2 " style="font-size: 5em;">&#2974;</p>
             <h1 class=" mt-4"><span class="text-5xl font-bold">nyainfo</span>.com</h1>
             <p class="text-sm mt-2">Coming Soon</p>
