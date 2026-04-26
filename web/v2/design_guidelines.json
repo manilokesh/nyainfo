@@ -1,0 +1,155 @@
+{
+  "project_name": "NyaInfo",
+  "domain": "IT Company / Full Stack Development",
+  "theme_mode": "dark",
+  "archetype": "Archetype 4: Swiss & High-Contrast (Vibrant Tech Variant)",
+  "design_philosophy": {
+    "core_concept": "Bold & Vibrant Technical Precision. Combining the cold logic of full-stack engineering with high-energy neon/steel-blue accents to convey innovation and power.",
+    "emotion": "Trust, High-end competence, Boundary-pushing",
+    "contrast_strategy": "Deep obsidian/slate backgrounds cut by intense steel blue highlights and stark white typography."
+  },
+  "colors": {
+    "background": {
+      "base": "bg-slate-950",
+      "surface": "bg-slate-900",
+      "surface_glass": "bg-slate-900/60 backdrop-blur-xl"
+    },
+    "text": {
+      "primary": "text-white",
+      "secondary": "text-slate-400",
+      "accent": "text-blue-500",
+      "inverse": "text-slate-950"
+    },
+    "brand": {
+      "primary": "blue-500",
+      "primary_hex": "#3B82F6",
+      "secondary": "cyan-400",
+      "gradient": "bg-gradient-to-r from-blue-600 to-cyan-400"
+    },
+    "border": {
+      "default": "border-white/10",
+      "hover": "border-blue-500/50"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Outfit",
+      "body": "Plus Jakarta Sans",
+      "mono": "JetBrains Mono"
+    },
+    "scales": {
+      "h1": "text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1]",
+      "h2": "text-3xl md:text-5xl font-semibold tracking-tight leading-tight",
+      "h3": "text-2xl md:text-3xl font-medium tracking-tight",
+      "body": "text-base md:text-lg text-slate-400 leading-relaxed",
+      "overline": "text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-blue-500"
+    }
+  },
+  "spacing_and_layout": {
+    "section": "py-24 md:py-32",
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8",
+    "border_radius": "rounded-2xl"
+  },
+  "component_strategies": {
+    "cards": {
+      "style": "glassmorphism",
+      "classes": "bg-slate-900/40 backdrop-blur-md border border-white/10 hover:border-blue-500/30 transition-all duration-300 rounded-2xl p-8"
+    },
+    "buttons": {
+      "primary": "bg-blue-600 hover:bg-blue-500 text-white font-medium px-6 py-3 rounded-lg transition-colors shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)]",
+      "secondary": "bg-transparent border border-white/20 hover:border-white text-white font-medium px-6 py-3 rounded-lg transition-all",
+      "ghost": "text-slate-300 hover:text-white transition-colors"
+    },
+    "navigation": {
+      "style": "fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-xl border-b border-white/5"
+    }
+  },
+  "sections_requirements": {
+    "hero": {
+      "layout": "Grid-based asymmetrical split or prominent centered block with large typography",
+      "visuals": "Use the 'hero_bg' image as an absolute positioned background with bg-slate-950/80 overlay to ensure text contrast. Big glowing H1.",
+      "cta": "Primary CTA to Projects/Contact"
+    },
+    "services": {
+      "layout": "Bento Grid (Mode A). Different sized cards (span 4, span 8) for Full Stack, Frontend, Middle, DBs.",
+      "visuals": "Abstract tech icons (Lucide/Phosphor). Clean typography."
+    },
+    "tech_stack": {
+      "layout": "Infinite Marquee (React Fast Marquee) + categorized grid (Frontend: React; Middle: Python, Java, .NET; DB: MySQL, SQL Server, Oracle, MongoDB).",
+      "visuals": "Use React Icons (devicons) for the tech stacks."
+    },
+    "projects": {
+      "logic": "Must load from a hardcoded JSON file. Define a constant in the component or separate data file.",
+      "layout": "Grid cols-1 md:cols-2. Large image cover, sleek text below. Using 'software_dashboard' images."
+    },
+    "process": {
+      "layout": "Vertical timeline or staggered horizontal steps.",
+      "visuals": "Use 'process_bg' image sparingly or as a section background with heavy overlay."
+    },
+    "testimonials": {
+      "layout": "Offset grid or sleek Shadcn Carousel.",
+      "visuals": "Use 'headshots' images for avatars."
+    },
+    "team": {
+      "layout": "Grid cols-1 md:cols-3 or 4. Generous spacing.",
+      "visuals": "Use 'team_headshots' for team members."
+    },
+    "pricing": {
+      "layout": "3-column grid. Middle column scale-105 with active 'Tracing Beam' border effect (blue shadow/border).",
+      "content": "Clear tiers, checkmark lists."
+    },
+    "faq": {
+      "layout": "Narrow container (max-w-3xl). Shadcn Accordion.",
+      "visuals": "Minimalist, no boxes around accordions, just bottom borders."
+    },
+    "contact": {
+      "layout": "Two column: Left text/info, Right form.",
+      "logic": "Mock email submission with Shadcn Form/Sonner Toast.",
+      "visuals": "Glassmorphism panel for the form."
+    },
+    "footer": {
+      "layout": "Massive typography 'NYAINFO' at the top/bottom. Grid for links.",
+      "visuals": "Darker background (bg-black)."
+    }
+  },
+  "media": {
+    "hero_bg": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/db8d8998-f459-41df-a2a1-eafb97a1d167/images/65302197e2caa47cc89c4e54851f2999a073f0540e41781deed2f2e8988b861b.png",
+      "description": "Abstract 3D glowing steel blue geometric shapes"
+    },
+    "services_bg": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/db8d8998-f459-41df-a2a1-eafb97a1d167/images/7bb8dc4c14b56ed4f500ef3344f47ff16c036607f004719a215f806f8418e35a.png",
+      "description": "Cinematic server racks illuminated by vibrant steel blue"
+    },
+    "process_bg": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/db8d8998-f459-41df-a2a1-eafb97a1d167/images/83fcc02706e0b280281c2d825c851010674cc9cf59308c138c4b94540be87850.png",
+      "description": "Elegant abstract data visualization nodes"
+    },
+    "team_working": [
+      "https://images.unsplash.com/photo-1765561667528-28e39c6174dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBzb2Z0d2FyZSUyMGRldmVsb3BtZW50JTIwdGVhbXxlbnwwfHx8fDE3NzcxOTQwNzd8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/6804071/pexels-photo-6804071.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ],
+    "team_headshots": [
+      "https://images.unsplash.com/photo-1769636929261-e913ed023c83?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NzcxOTQwNzd8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1771898343647-bd979ad8cca5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NzcxOTQwNzd8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/14589344/pexels-photo-14589344.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ],
+    "project_mockups": [
+      "https://images.unsplash.com/photo-1763718528755-4bca23f82ac3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwyfHxzb2Z0d2FyZSUyMGRhc2hib2FyZCUyMHByb2plY3R8ZW58MHx8fHwxNzc3MTk0MDkxfDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwzfHxzb2Z0d2FyZSUyMGRhc2hib2FyZCUyMHByb2plY3R8ZW58MHx8fHwxNzc3MTk0MDkxfDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1758598304169-505a9c278dcd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwyfHxtb2JpbGUlMjBhcHAlMjBkZXNpZ24lMjBtb2NrdXBzfGVufDB8fHx8MTc3NzE5NDA5MXww&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/8166409/pexels-photo-8166409.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ]
+  },
+  "testing_and_accessibility": {
+    "attributes": "All interactive elements MUST use data-testid (e.g., data-testid='hero-cta-button', data-testid='contact-submit').",
+    "contrast": "Ensure text over images has sufficient contrast (overlay background with min 50% opacity if necessary)."
+  },
+  "third_party_libraries": {
+    "icons": "lucide-react for UI, react-icons for tech stack (devicons)",
+    "animations": "framer-motion for scroll reveals, react-fast-marquee for tech stack ticker",
+    "components": "shadcn/ui for Accordion, Forms, Inputs, Toast (Sonner), Carousel"
+  }
+}
