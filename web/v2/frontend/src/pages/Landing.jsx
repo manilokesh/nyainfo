@@ -16,7 +16,7 @@ export default function Landing() {
     return (
         <main
             data-testid="landing-page"
-            className="bg-slate-950 text-white min-h-screen"
+            className="bg-white text-slate-800 min-h-screen overflow-hidden"
         >
             <Navbar />
             <Hero />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import LogoMark from "@/components/LogoMark";
 import { site } from "@/data/site";
 
 export default function Navbar() {
@@ -18,7 +19,7 @@ export default function Navbar() {
             data-testid="navbar"
             className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
                 scrolled
-                    ? "bg-slate-950/80 backdrop-blur-xl border-b border-white/10"
+                    ? "bg-white/85 backdrop-blur-xl border-b border-slate-200 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.08)]"
                     : "bg-transparent"
             }`}
         >
@@ -26,28 +27,28 @@ export default function Navbar() {
                 <a
                     href="#top"
                     data-testid="navbar-logo"
-                    className="flex items-center gap-2 group"
+                    className="flex items-center gap-3 group"
                 >
-                    <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600/20 border border-blue-500/40">
-                        <span className="absolute inset-0 rounded-lg bg-blue-500/30 blur-md opacity-60 group-hover:opacity-100 transition" />
-                        <span className="relative font-display font-black text-blue-300 text-sm">
-                            N
-                        </span>
-                    </span>
-                    <span className="font-display text-lg font-semibold tracking-tight text-white">
+                    <LogoMark size="md" />
+                    <span className="font-display text-xl font-bold tracking-tight text-slate-900">
                         {site.brand.name}
+                        <span className="text-brand">.</span>
                     </span>
                 </a>
 
-                <nav className="hidden md:flex items-center gap-8" data-testid="navbar-links">
+                <nav
+                    className="hidden md:flex items-center gap-8"
+                    data-testid="navbar-links"
+                >
                     {site.nav.map((item) => (
                         <a
                             key={item.href}
                             href={item.href}
                             data-testid={`nav-link-${item.label.toLowerCase()}`}
-                            className="text-sm text-slate-300 hover:text-white transition-colors"
+                            className="relative text-sm font-semibold text-slate-700 hover:text-brand transition-colors group"
                         >
                             {item.label}
+                            <span className="absolute -bottom-2 left-0 right-0 mx-auto h-0.5 w-0 bg-brand rounded-full transition-all duration-300 group-hover:w-full" />
                         </a>
                     ))}
                 </nav>
@@ -56,9 +57,12 @@ export default function Navbar() {
                     <a
                         href="#contact"
                         data-testid="navbar-cta"
-                        className="inline-flex items-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2 transition shadow-[0_0_20px_rgba(59,130,246,0.35)] hover:shadow-[0_0_30px_rgba(59,130,246,0.55)]"
+                        className="group inline-flex items-center gap-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold pl-5 pr-1.5 py-1.5 transition shadow-[0_12px_30px_-12px_rgba(15,23,42,0.5)]"
                     >
-                        Start a project <ArrowUpRight className="h-4 w-4" />
+                        <span>Start a project</span>
+                        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand group-hover:bg-brand-strong transition">
+                            <ArrowUpRight className="h-4 w-4" />
+                        </span>
                     </a>
                 </div>
 
@@ -66,7 +70,7 @@ export default function Navbar() {
                     type="button"
                     data-testid="navbar-mobile-toggle"
                     onClick={() => setOpen((v) => !v)}
-                    className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-white border border-white/10"
+                    className="md:hidden inline-flex items-center justify-center rounded-full p-2 text-slate-700 border border-slate-200 bg-white"
                     aria-label="Toggle menu"
                 >
                     {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -76,7 +80,7 @@ export default function Navbar() {
             {open && (
                 <div
                     data-testid="navbar-mobile-menu"
-                    className="md:hidden border-t border-white/10 bg-slate-950/95 backdrop-blur-xl"
+                    className="md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl"
                 >
                     <div className="px-6 py-6 flex flex-col gap-4">
                         {site.nav.map((item) => (
@@ -84,7 +88,7 @@ export default function Navbar() {
                                 key={item.href}
                                 href={item.href}
                                 onClick={() => setOpen(false)}
-                                className="text-slate-300 hover:text-white text-base"
+                                className="text-slate-700 hover:text-brand text-base font-medium"
                             >
                                 {item.label}
                             </a>
@@ -92,7 +96,7 @@ export default function Navbar() {
                         <a
                             href="#contact"
                             onClick={() => setOpen(false)}
-                            className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-3"
+                            className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-brand hover:bg-brand-strong text-white text-sm font-semibold px-5 py-3 shadow-brand"
                         >
                             Start a project <ArrowUpRight className="h-4 w-4" />
                         </a>

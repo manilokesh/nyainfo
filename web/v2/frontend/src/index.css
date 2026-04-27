@@ -1,4 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+/* =====================================================================
+   NyaInfo — Light theme (white / gray / steel-blue)
+   ---------------------------------------------------------------------
+   ▶ To change the brand colour everywhere on the site, edit the THREE
+     numbers on the `--brand` line below (HSL hue / saturation / lightness).
+     Every shadcn primary, button, accent, link, ring, badge and gradient
+     reads from this single value.
+
+       --brand: <hue> <saturation>% <lightness>%;
+
+     Examples:
+        Steel blue   →  --brand: 210 88% 55%;   (default)
+        Indigo       →  --brand: 240 80% 60%;
+        Teal         →  --brand: 175 70% 42%;
+        Violet       →  --brand: 270 75% 60%;
+        Rose         →  --brand: 345 80% 58%;
+   ===================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,11 +28,11 @@ html {
 
 body {
     margin: 0;
-    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #020617; /* slate-950 */
-    color: #ffffff;
+    background-color: #ffffff;
+    color: hsl(220 25% 18%);
     overflow-x: hidden;
 }
 
@@ -25,32 +43,40 @@ code,
 }
 
 .font-display {
-    font-family: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
+    font-family: "Quicksand", "Nunito", system-ui, sans-serif;
+    letter-spacing: -0.01em;
 }
 
 @layer base {
     :root {
-        /* NyaInfo dark theme — slate / steel-blue */
-        --background: 222 47% 4%;          /* slate-950 */
-        --foreground: 0 0% 100%;
-        --card: 222 47% 6%;
-        --card-foreground: 0 0% 100%;
-        --popover: 222 47% 6%;
-        --popover-foreground: 0 0% 100%;
-        --primary: 217 91% 60%;            /* blue-500 */
+        /* === ⚙️  Single source of truth for the brand colour ============== */
+        --brand: 210 88% 55%;
+        /* Derived shades (auto-update with --brand) */
+        --brand-soft: 210 100% 96%;
+        --brand-softer: 210 100% 98%;
+        --brand-strong: 210 90% 45%;
+
+        /* === Shadcn tokens ============================================== */
+        --background: 0 0% 100%;
+        --foreground: 220 25% 18%;
+        --card: 0 0% 100%;
+        --card-foreground: 220 25% 18%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 220 25% 18%;
+        --primary: var(--brand);
         --primary-foreground: 0 0% 100%;
-        --secondary: 217 33% 17%;          /* slate-800 */
-        --secondary-foreground: 0 0% 100%;
-        --muted: 217 33% 17%;
-        --muted-foreground: 215 20% 65%;   /* slate-400 */
-        --accent: 217 33% 17%;
-        --accent-foreground: 0 0% 100%;
+        --secondary: 210 40% 96%;
+        --secondary-foreground: 220 25% 18%;
+        --muted: 210 40% 96%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 210 100% 96%;
+        --accent-foreground: 220 25% 18%;
         --destructive: 0 72% 51%;
         --destructive-foreground: 0 0% 100%;
-        --border: 215 27% 17%;
-        --input: 215 27% 17%;
-        --ring: 217 91% 60%;
-        --radius: 0.75rem;
+        --border: 214 32% 91%;
+        --input: 214 32% 91%;
+        --ring: var(--brand);
+        --radius: 1rem;
     }
 }
 
@@ -62,31 +88,67 @@ code,
         @apply bg-background text-foreground;
     }
     ::selection {
-        background: rgba(59, 130, 246, 0.4);
-        color: #ffffff;
+        background: hsl(var(--brand) / 0.25);
+        color: hsl(var(--brand-strong));
     }
 }
 
-/* Subtle grid background utility */
-.bg-grid-slate {
-    background-image:
-        linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
-    background-size: 56px 56px;
-    background-position: -1px -1px;
+/* ---------- Brand-driven utility classes ---------- */
+.bg-brand {
+    background-color: hsl(var(--brand));
 }
-
-.glow-blue {
-    box-shadow:
-        0 0 0 1px rgba(59, 130, 246, 0.25),
-        0 0 60px -10px rgba(59, 130, 246, 0.55);
+.bg-brand-soft {
+    background-color: hsl(var(--brand-soft));
 }
-
-.text-gradient-steel {
-    background: linear-gradient(120deg, #ffffff 0%, #93c5fd 50%, #3b82f6 100%);
+.bg-brand-softer {
+    background-color: hsl(var(--brand-softer));
+}
+.text-brand {
+    color: hsl(var(--brand));
+}
+.text-brand-strong {
+    color: hsl(var(--brand-strong));
+}
+.border-brand {
+    border-color: hsl(var(--brand));
+}
+.ring-brand {
+    --tw-ring-color: hsl(var(--brand));
+}
+.shadow-brand {
+    box-shadow: 0 18px 40px -16px hsl(var(--brand) / 0.45);
+}
+.shadow-brand-lg {
+    box-shadow: 0 26px 70px -18px hsl(var(--brand) / 0.55);
+}
+.text-gradient-brand {
+    background-image: linear-gradient(
+        120deg,
+        hsl(var(--brand-strong)) 0%,
+        hsl(var(--brand)) 60%,
+        hsl(var(--brand) / 0.6) 100%
+    );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+
+/* ---------- Soft dot grid for light backgrounds ---------- */
+.bg-dot-grid {
+    background-image: radial-gradient(
+        hsl(var(--brand) / 0.18) 1px,
+        transparent 1px
+    );
+    background-size: 22px 22px;
+}
+
+/* ---------- Hero blob backdrop ---------- */
+.blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(60px);
+    opacity: 0.55;
+    pointer-events: none;
 }
 
 @keyframes float {
@@ -102,7 +164,7 @@ code,
     animation: float 6s ease-in-out infinite;
 }
 
-@keyframes blob {
+@keyframes blob-drift {
     0%,
     100% {
         transform: translate(0px, 0px) scale(1);
@@ -115,7 +177,7 @@ code,
     }
 }
 .animate-blob {
-    animation: blob 14s ease-in-out infinite;
+    animation: blob-drift 16s ease-in-out infinite;
 }
 
 @layer base {

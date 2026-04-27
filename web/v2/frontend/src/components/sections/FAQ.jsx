@@ -12,13 +12,13 @@ export default function FAQ() {
         <section
             id="faq"
             data-testid="faq-section"
-            className="relative py-24 md:py-32 border-t border-white/5"
+            className="relative py-24 md:py-32 bg-brand-softer"
         >
             <div className="max-w-3xl mx-auto px-6 md:px-10">
-                <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-blue-400">
+                <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-brand">
                     FAQ
                 </p>
-                <h2 className="font-display mt-4 text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
+                <h2 className="font-display mt-4 text-3xl md:text-5xl font-bold tracking-tight leading-tight text-slate-900">
                     Questions, answered.
                 </h2>
 
@@ -33,12 +33,12 @@ export default function FAQ() {
                             key={i}
                             value={`item-${i}`}
                             data-testid={`faq-item-${i}`}
-                            className="border-b border-white/10"
+                            className="border-b border-slate-200"
                         >
-                            <AccordionTrigger className="text-left text-base md:text-lg font-medium text-white hover:text-blue-300 hover:no-underline py-5">
+                            <AccordionTrigger className="text-left text-base md:text-lg font-bold text-slate-900 hover:text-brand hover:no-underline py-5">
                                 {f.q}
                             </AccordionTrigger>
-                            <AccordionContent className="text-slate-400 leading-relaxed text-base">
+                            <AccordionContent className="text-slate-600 leading-relaxed text-base">
                                 {f.a}
                             </AccordionContent>
                         </AccordionItem>

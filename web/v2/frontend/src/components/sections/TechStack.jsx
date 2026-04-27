@@ -31,7 +31,7 @@ const groups = [
         Icon: Code2,
         items: [
             { name: "React", Icon: SiReact, color: "#61DAFB" },
-            { name: "Next.js", Icon: SiNextdotjs, color: "#FFFFFF" },
+            { name: "Next.js", Icon: SiNextdotjs, color: "#0F172A" },
             { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
             { name: "Tailwind", Icon: SiTailwindcss, color: "#38BDF8" },
             { name: "Vite", Icon: SiVite, color: "#A78BFA" },
@@ -70,9 +70,9 @@ const groups = [
             { name: "Docker", Icon: SiDocker, color: "#2496ED" },
             { name: "Kubernetes", Icon: SiKubernetes, color: "#326CE5" },
             { name: "AWS", Icon: FaAws, color: "#FF9900" },
-            { name: "Azure", Icon: TbBrandAzure, color: "#3B82F6" },
+            { name: "Azure", Icon: TbBrandAzure, color: "#0078D4" },
             { name: "GCP", Icon: SiGooglecloud, color: "#EA4335" },
-            { name: "GH Actions", Icon: SiGithubactions, color: "#FFFFFF" },
+            { name: "GH Actions", Icon: SiGithubactions, color: "#0F172A" },
         ],
     },
 ];
@@ -84,17 +84,17 @@ export default function TechStack() {
         <section
             id="stack"
             data-testid="techstack-section"
-            className="relative py-24 md:py-32 border-y border-white/5 bg-slate-950"
+            className="relative py-24 md:py-32 bg-brand-softer"
         >
             <div className="max-w-7xl mx-auto px-6 md:px-10">
                 <div className="max-w-3xl">
-                    <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-blue-400">
+                    <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-brand">
                         Tech we ship with
                     </p>
-                    <h2 className="font-display mt-4 text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
+                    <h2 className="font-display mt-4 text-3xl md:text-5xl font-bold tracking-tight leading-tight text-slate-900">
                         A pragmatic, battle-tested stack.
                     </h2>
-                    <p className="mt-5 text-base md:text-lg text-slate-400 leading-relaxed">
+                    <p className="mt-5 text-base md:text-lg text-slate-600 leading-relaxed">
                         We pick the right tool for the job — never the trendiest. Below
                         is what powers most of our customer engagements.
                     </p>
@@ -105,13 +105,13 @@ export default function TechStack() {
                         {allLogos.concat(allLogos).map((t, idx) => (
                             <div
                                 key={idx}
-                                className="mx-6 md:mx-10 flex items-center gap-3 text-slate-300"
+                                className="mx-6 md:mx-10 flex items-center gap-3 text-slate-700"
                             >
                                 <t.Icon
                                     className="h-7 w-7"
                                     style={{ color: t.color }}
                                 />
-                                <span className="font-display text-lg md:text-xl font-medium">
+                                <span className="font-display text-lg md:text-xl font-bold">
                                     {t.name}
                                 </span>
                             </div>
@@ -124,24 +124,24 @@ export default function TechStack() {
                         <div
                             key={g.title}
                             data-testid={`stack-group-${g.title.toLowerCase().replace(/\s+/g, "-")}`}
-                            className="rounded-2xl border border-white/10 bg-slate-900/40 backdrop-blur-md p-6 hover:border-blue-500/30 transition"
+                            className="rounded-3xl border border-slate-200 bg-white p-6 hover:border-brand/40 hover:shadow-[0_18px_50px_-25px_rgba(15,23,42,0.2)] transition"
                         >
                             <div className="flex items-center gap-3">
-                                <div className="h-10 w-10 rounded-lg bg-blue-600/15 border border-blue-500/30 flex items-center justify-center">
-                                    <g.Icon className="h-5 w-5 text-blue-400" />
+                                <div className="h-11 w-11 rounded-2xl bg-brand-soft flex items-center justify-center">
+                                    <g.Icon className="h-5 w-5 text-brand" />
                                 </div>
                                 <div>
-                                    <h3 className="font-display text-lg font-semibold text-white">
+                                    <h3 className="font-display text-lg font-bold text-slate-900">
                                         {g.title}
                                     </h3>
-                                    <p className="text-xs text-slate-400">{g.sub}</p>
+                                    <p className="text-xs text-slate-500">{g.sub}</p>
                                 </div>
                             </div>
                             <ul className="mt-5 flex flex-wrap gap-2">
                                 {g.items.map((item) => (
                                     <li
                                         key={item.name}
-                                        className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-slate-950/60 px-2.5 py-1.5 text-xs text-slate-300"
+                                        className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700"
                                     >
                                         <item.Icon
                                             className="h-3.5 w-3.5"

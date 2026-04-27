@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { Mail, MapPin, Phone, Send, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import Blob from "@/components/Blob";
 import { site } from "@/data/site";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -44,64 +45,77 @@ export default function Contact() {
         }
     };
 
+    const inputCls =
+        "bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 rounded-xl focus-visible:ring-brand focus-visible:border-brand";
+
     return (
         <section
             id="contact"
             data-testid="contact-section"
-            className="relative py-24 md:py-32"
+            className="relative py-24 md:py-32 bg-white overflow-hidden"
         >
-            <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <Blob
+                variant={1}
+                soft
+                className="absolute -top-32 -left-24 w-[520px] opacity-90"
+            />
+            <Blob
+                variant={3}
+                className="absolute -bottom-24 -right-32 w-[380px] opacity-15"
+            />
+            <div className="relative max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                 <div>
-                    <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-blue-400">
-                        Let's talk
+                    <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-brand">
+                        Let&apos;s talk
                     </p>
-                    <h2 className="font-display mt-4 text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
+                    <h2 className="font-display mt-4 text-3xl md:text-5xl font-bold tracking-tight leading-tight text-slate-900">
                         Tell us about your project.
                     </h2>
-                    <p className="mt-5 text-base md:text-lg text-slate-400 leading-relaxed max-w-xl">
-                        Drop a line about what you're building. We'll reply within one
-                        business day with next steps and a short discovery call invite.
+                    <p className="mt-5 text-base md:text-lg text-slate-600 leading-relaxed max-w-xl">
+                        Drop a line about what you&apos;re building. We&apos;ll reply
+                        within one business day with next steps and a short discovery
+                        call invite.
                     </p>
 
                     <ul className="mt-10 space-y-5" data-testid="contact-info">
                         <li className="flex items-start gap-4">
-                            <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600/15 border border-blue-500/30">
-                                <Mail className="h-4 w-4 text-blue-300" />
+                            <span className="mt-1 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-soft">
+                                <Mail className="h-4 w-4 text-brand" />
                             </span>
                             <div>
-                                <div className="text-sm uppercase tracking-[0.18em] text-slate-500">
+                                <div className="text-xs uppercase tracking-[0.18em] text-slate-500 font-semibold">
                                     Email
                                 </div>
                                 <a
                                     href={`mailto:${site.brand.email}`}
-                                    className="text-white text-base hover:text-blue-300"
+                                    className="text-slate-900 text-base font-semibold hover:text-brand"
                                 >
                                     {site.brand.email}
                                 </a>
                             </div>
                         </li>
                         <li className="flex items-start gap-4">
-                            <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600/15 border border-blue-500/30">
-                                <Phone className="h-4 w-4 text-blue-300" />
+                            <span className="mt-1 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-soft">
+                                <Phone className="h-4 w-4 text-brand" />
                             </span>
                             <div>
-                                <div className="text-sm uppercase tracking-[0.18em] text-slate-500">
+                                <div className="text-xs uppercase tracking-[0.18em] text-slate-500 font-semibold">
                                     Phone
                                 </div>
-                                <span className="text-white text-base">
+                                <span className="text-slate-900 text-base font-semibold">
                                     {site.brand.phone}
                                 </span>
                             </div>
                         </li>
                         <li className="flex items-start gap-4">
-                            <span className="mt-1 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600/15 border border-blue-500/30">
-                                <MapPin className="h-4 w-4 text-blue-300" />
+                            <span className="mt-1 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-soft">
+                                <MapPin className="h-4 w-4 text-brand" />
                             </span>
                             <div>
-                                <div className="text-sm uppercase tracking-[0.18em] text-slate-500">
+                                <div className="text-xs uppercase tracking-[0.18em] text-slate-500 font-semibold">
                                     Where we are
                                 </div>
-                                <span className="text-white text-base">
+                                <span className="text-slate-900 text-base font-semibold">
                                     {site.brand.address}
                                 </span>
                             </div>
@@ -112,13 +126,13 @@ export default function Contact() {
                 <form
                     onSubmit={onSubmit}
                     data-testid="contact-form"
-                    className="rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl p-6 md:p-10 shadow-[0_0_60px_-20px_rgba(59,130,246,0.45)]"
+                    className="rounded-3xl border border-slate-200 bg-white p-6 md:p-10 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.25)]"
                 >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div className="flex flex-col gap-2">
                             <label
                                 htmlFor="name"
-                                className="text-xs uppercase tracking-[0.18em] text-slate-400"
+                                className="text-xs uppercase tracking-[0.18em] text-slate-500 font-semibold"
                             >
                                 Name *
                             </label>
@@ -130,13 +144,13 @@ export default function Contact() {
                                 placeholder="Jane Doe"
                                 data-testid="contact-input-name"
                                 required
-                                className="bg-slate-950/60 border-white/10 text-white placeholder:text-slate-500 focus-visible:ring-blue-500"
+                                className={inputCls}
                             />
                         </div>
                         <div className="flex flex-col gap-2">
                             <label
                                 htmlFor="email"
-                                className="text-xs uppercase tracking-[0.18em] text-slate-400"
+                                className="text-xs uppercase tracking-[0.18em] text-slate-500 font-semibold"
                             >
                                 Email *
                             </label>
@@ -149,13 +163,13 @@ export default function Contact() {
                                 placeholder="jane@company.com"
                                 data-testid="contact-input-email"
                                 required
-                                className="bg-slate-950/60 border-white/10 text-white placeholder:text-slate-500 focus-visible:ring-blue-500"
+                                className={inputCls}
                             />
                         </div>
                         <div className="flex flex-col gap-2">
                             <label
                                 htmlFor="company"
-                                className="text-xs uppercase tracking-[0.18em] text-slate-400"
+                                className="text-xs uppercase tracking-[0.18em] text-slate-500 font-semibold"
                             >
                                 Company
                             </label>
@@ -166,13 +180,13 @@ export default function Contact() {
                                 onChange={onChange}
                                 placeholder="Acme Inc."
                                 data-testid="contact-input-company"
-                                className="bg-slate-950/60 border-white/10 text-white placeholder:text-slate-500 focus-visible:ring-blue-500"
+                                className={inputCls}
                             />
                         </div>
                         <div className="flex flex-col gap-2">
                             <label
                                 htmlFor="subject"
-                                className="text-xs uppercase tracking-[0.18em] text-slate-400"
+                                className="text-xs uppercase tracking-[0.18em] text-slate-500 font-semibold"
                             >
                                 Subject
                             </label>
@@ -183,14 +197,14 @@ export default function Contact() {
                                 onChange={onChange}
                                 placeholder="New SaaS build"
                                 data-testid="contact-input-subject"
-                                className="bg-slate-950/60 border-white/10 text-white placeholder:text-slate-500 focus-visible:ring-blue-500"
+                                className={inputCls}
                             />
                         </div>
                     </div>
                     <div className="mt-5 flex flex-col gap-2">
                         <label
                             htmlFor="message"
-                            className="text-xs uppercase tracking-[0.18em] text-slate-400"
+                            className="text-xs uppercase tracking-[0.18em] text-slate-500 font-semibold"
                         >
                             Message *
                         </label>
@@ -203,7 +217,7 @@ export default function Contact() {
                             placeholder="Tell us a bit about your project, timeline, and stack."
                             data-testid="contact-input-message"
                             required
-                            className="bg-slate-950/60 border-white/10 text-white placeholder:text-slate-500 focus-visible:ring-blue-500 resize-none"
+                            className={`${inputCls} resize-none`}
                         />
                     </div>
 
@@ -211,7 +225,7 @@ export default function Contact() {
                         type="submit"
                         disabled={loading}
                         data-testid="contact-submit-button"
-                        className="mt-7 inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium px-6 py-3 transition shadow-[0_0_20px_rgba(59,130,246,0.35)] hover:shadow-[0_0_40px_rgba(59,130,246,0.65)]"
+                        className="mt-7 inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-brand hover:bg-brand-strong disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold px-7 py-3.5 transition shadow-brand hover:shadow-brand-lg"
                     >
                         {loading ? (
                             <Loader2 className="h-4 w-4 animate-spin" />
@@ -222,8 +236,8 @@ export default function Contact() {
                     </button>
 
                     <p className="mt-4 text-xs text-slate-500">
-                        By submitting you agree to our standard NDA / DPA terms. We'll
-                        never share your details.
+                        By submitting you agree to our standard NDA / DPA terms.
+                        We&apos;ll never share your details.
                     </p>
                 </form>
             </div>
