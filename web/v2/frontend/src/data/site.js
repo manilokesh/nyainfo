@@ -119,11 +119,18 @@ export const site = {
   ],
   team: [
     {
-      name: "Arjun Iyer",
+      name: "Vijay Krishnan",
       role: "Founder & Principal Architect",
-      bio: "15+ years across fintech, healthcare and SaaS. Ex-Thoughtworks.",
+      bio: "15+ years across fintech, healthcare and SaaS. Sets the technical bar.",
       avatar:
-        "https://images.unsplash.com/photo-1769636929261-e913ed023c83?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NzcxOTQwNzd8MA&ixlib=rb-4.1.0&q=85",
+        "https://api.dicebear.com/7.x/initials/svg?seed=Vijay%20Krishnan&backgroundColor=1d4ed8,2563eb,3b82f6&fontFamily=Quicksand&fontWeight=700&backgroundType=gradientLinear",
+    },
+    {
+      name: "Lokesh",
+      role: "Head of Engineering",
+      bio: "Distributed systems, Java/.NET, event-driven architectures.",
+      avatar:
+        "https://api.dicebear.com/7.x/initials/svg?seed=Lokesh&backgroundColor=0ea5e9,1d4ed8,3b82f6&fontFamily=Quicksand&fontWeight=700&backgroundType=gradientLinear",
     },
     {
       name: "Sara Bhatt",
@@ -131,13 +138,6 @@ export const site = {
       bio: "Design-systems, performance & accessibility. React / Next specialist.",
       avatar:
         "https://images.pexels.com/photos/14589344/pexels-photo-14589344.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-    {
-      name: "Rohan Das",
-      role: "Head of Backend",
-      bio: "Distributed systems, Java/.NET, event-driven architectures.",
-      avatar:
-        "https://images.unsplash.com/photo-1771898343647-bd979ad8cca5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBjb3Jwb3JhdGUlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NzcxOTQwNzd8MA&ixlib=rb-4.1.0&q=85",
     },
     {
       name: "Meera Kapoor",

@@ -16,11 +16,11 @@ export default defineConfig(({ mode }) => {
                 "@": path.resolve(__dirname, "src"),
             },
         },
-        // Allow JSX inside `.js` files (App.js etc.) without renaming everything.
-        esbuild: {
-            loader: "jsx",
-            include: /src\/.*\.[jt]sx?$/,
-            exclude: [],
+        // .tsx / .jsx are handled natively by Vite's oxc transformer.
+        optimizeDeps: {
+            esbuildOptions: {
+                loader: { ".js": "jsx" },
+            },
         },
         define: {
             // Expose REACT_APP_* vars to client code (drop-in for CRA's process.env).
