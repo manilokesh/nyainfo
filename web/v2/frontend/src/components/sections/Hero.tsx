@@ -190,7 +190,7 @@ export default function Hero() {
             {/* Inner white egg */}
             <div className="absolute inset-10 rounded-[50%] bg-white shadow-[0_30px_70px_-20px_rgba(15,23,42,0.18)]" />
             {/* Tech "device" */}
-            <div className="absolute inset-x-16 top-[18%] bottom-[16%] rounded-[2.4rem] overflow-hidden border-[10px] border-slate-900 shadow-[0_24px_60px_-15px_rgba(15,23,42,0.45)] bg-slate-900">
+            <div className="absolute inset-x-16 top-[18%] bottom-[16%] rounded-[2.4rem] overflow-hidden border-[10px] 1border-slate-900 shadow-[0_24px_60px_-15px_rgba(15,23,42,0.45)] 1bg-slate-900">
               <img
                 src={TECH_IMG}
                 alt="Abstract tech network visualisation"

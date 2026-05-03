@@ -50,7 +50,7 @@ code,
 @layer base {
     :root {
         /* === ⚙️  Single source of truth for the brand colour ============== */
-        --brand: 210 88% 55%;
+        --brand: 311 82% 56%;
         /* Derived shades (auto-update with --brand) */
         --brand-soft: 210 100% 96%;
         --brand-softer: 210 100% 98%;
