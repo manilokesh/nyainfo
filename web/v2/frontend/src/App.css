@@ -23,3 +23,18 @@
         transparent 100%
     );
 }
+
+
+@font-face {
+  font-family: "Aremat";
+  src: 
+    url("/assets/fonts/aremat/aremat_font.ttf") format("truetype"),
+    url("/assets/fonts/aremat/aremat_font.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+ .font-logo {
+  font-family: "Aremat", sans-serif;
+}

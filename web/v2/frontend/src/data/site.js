@@ -3,7 +3,7 @@
 
 export const site = {
   brand: {
-    name: "NyaInfo",
+    name: "nyainfo",
     tagline: "Full-stack engineering, end to end.",
     email: "contact@nyainfo.com",
     phone: "+91 80 4000 1234",
@@ -53,7 +53,14 @@ export const site = {
   stack: {
     frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vite"],
     middle: ["Python", "FastAPI", "Java", "Spring Boot", ".NET 8", "Node.js"],
-    database: ["MySQL", "SQL Server", "Oracle", "MongoDB", "PostgreSQL", "Redis"],
+    database: [
+      "MySQL",
+      "SQL Server",
+      "Oracle",
+      "MongoDB",
+      "PostgreSQL",
+      "Redis",
+    ],
     devops: ["Docker", "Kubernetes", "AWS", "Azure", "GCP", "GitHub Actions"],
   },
   process: [
@@ -122,29 +129,25 @@ export const site = {
       name: "Vijay Krishnan",
       role: "Founder & Principal Architect",
       bio: "15+ years across fintech, healthcare and SaaS. Sets the technical bar.",
-      avatar:
-        "https://api.dicebear.com/7.x/initials/svg?seed=Vijay%20Krishnan&backgroundColor=1d4ed8,2563eb,3b82f6&fontFamily=Quicksand&fontWeight=700&backgroundType=gradientLinear",
+      avatar: "/assets/images/avatars/02.png",
     },
     {
       name: "Lokesh",
       role: "Head of Engineering",
       bio: "Distributed systems, Java/.NET, event-driven architectures.",
-      avatar:
-        "https://api.dicebear.com/7.x/initials/svg?seed=Lokesh&backgroundColor=0ea5e9,1d4ed8,3b82f6&fontFamily=Quicksand&fontWeight=700&backgroundType=gradientLinear",
+      avatar: "/assets/images/avatars/01.png",
     },
     {
-      name: "Sara Bhatt",
+      name: "Iniyan",
       role: "Head of Frontend",
       bio: "Design-systems, performance & accessibility. React / Next specialist.",
-      avatar:
-        "https://images.pexels.com/photos/14589344/pexels-photo-14589344.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      avatar: "/assets/images/avatars/03.png",
     },
     {
-      name: "Meera Kapoor",
+      name: "Sezhiyan",
       role: "Lead, Data & Cloud",
       bio: "Oracle, SQL Server, MongoDB modelling. AWS / Azure certified.",
-      avatar:
-        "https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      avatar: "/assets/images/avatars/04.png",
     },
   ],
   pricing: [
